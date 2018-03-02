@@ -1,0 +1,162 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:126), pid=10356, tid=13856
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version:  (8.0_20-b26) (build )
+# Java VM: Java HotSpot(TM) Client VM (25.20-b23 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x024ed800):  JavaThread "Unknown thread" [_thread_in_vm, id=13856, stack(0x002e0000,0x00330000)]
+
+Stack: [0x002e0000,0x00330000],  sp=0x0032f890,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x196ccb]
+V  [jvm.dll+0x18fc56]
+V  [jvm.dll+0x3b52a]
+V  [jvm.dll+0x3b9b0]
+V  [jvm.dll+0x3e355]
+V  [jvm.dll+0x168e48]
+V  [jvm.dll+0xda6d1]
+C  [javaw.exe+0x13e4]
+C  [javaw.exe+0x1eb7]
+C  [javaw.exe+0xaba1]
+C  [javaw.exe+0xac2b]
+C  [kernel32.dll+0x1336a]
+C  [ntdll.dll+0x39902]
+C  [ntdll.dll+0x398d5]
+C  0x00000000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x024ed800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=13856, stack(0x002e0000,0x00330000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 88K [0x04600000, 0x04b50000, 0x09b50000)
+  eden space 4416K,   2% used [0x04600000, 0x04616158, 0x04a50000)
+  from space 512K,   0% used [0x04a50000, 0x04a50000, 0x04ad0000)
+  to   space 512K,   0% used [0x04ad0000, 0x04ad0000, 0x04b50000)
+ tenured generation   total 10944K, used 0K [0x09b50000, 0x0a600000, 0x14600000)
+   the space 10944K,   0% used [0x09b50000, 0x09b50000, 0x09b50200, 0x0a600000)
+ Metaspace       used 437K, capacity 2240K, committed 2240K, reserved 4480K
+
+Card table byte_map: [0x14600000,0x14690000] byte_map_base: 0x145dd000
+
+Polling page: 0x00160000
+
+CodeCache: size=32768Kb used=273Kb max_used=273Kb free=32494Kb
+ bounds [0x025f0000, 0x02638000, 0x045f0000]
+ total_blobs=44 nmethods=0 adapters=28
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.023 loading class java/lang/Short
+Event: 0.023 loading class java/lang/Short done
+Event: 0.023 loading class java/lang/Integer
+Event: 0.023 loading class java/lang/Integer done
+Event: 0.023 loading class java/lang/Long
+Event: 0.024 loading class java/lang/Long done
+Event: 0.024 loading class java/lang/NullPointerException
+Event: 0.024 loading class java/lang/NullPointerException done
+Event: 0.024 loading class java/lang/ArithmeticException
+Event: 0.024 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x000f0000 - 0x00120000 	D:\Java\jdk1.8.0_20\bin\javaw.exe
+0x77540000 - 0x776c0000 	C:\Windows\SysWOW64\ntdll.dll
+0x75710000 - 0x75820000 	C:\Windows\syswow64\kernel32.dll
+0x75b90000 - 0x75bd7000 	C:\Windows\syswow64\KERNELBASE.dll
+0x75930000 - 0x759d1000 	C:\Windows\syswow64\ADVAPI32.dll
+0x75ae0000 - 0x75b8c000 	C:\Windows\syswow64\msvcrt.dll
+0x75d60000 - 0x75d79000 	C:\Windows\SysWOW64\sechost.dll
+0x75380000 - 0x75470000 	C:\Windows\syswow64\RPCRT4.dll
+0x74ba0000 - 0x74c00000 	C:\Windows\syswow64\SspiCli.dll
+0x74b90000 - 0x74b9c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x75250000 - 0x75350000 	C:\Windows\syswow64\USER32.dll
+0x75680000 - 0x75710000 	C:\Windows\syswow64\GDI32.dll
+0x75920000 - 0x7592a000 	C:\Windows\syswow64\LPK.dll
+0x75f90000 - 0x7602d000 	C:\Windows\syswow64\USP10.dll
+0x71930000 - 0x71ace000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\COMCTL32.dll
+0x75620000 - 0x75677000 	C:\Windows\syswow64\SHLWAPI.dll
+0x762f0000 - 0x76350000 	C:\Windows\system32\IMM32.DLL
+0x75850000 - 0x7591c000 	C:\Windows\syswow64\MSCTF.dll
+0x714a0000 - 0x714ca000 	C:\Windows\SysWOW64\nvinit.dll
+0x746f0000 - 0x746f9000 	C:\Windows\system32\VERSION.dll
+0x71d90000 - 0x71d96000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\detoured.dll
+0x71d50000 - 0x71d81000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\nvd3d9wrap.dll
+0x76030000 - 0x761cd000 	C:\Windows\syswow64\SETUPAPI.dll
+0x75350000 - 0x75377000 	C:\Windows\syswow64\CFGMGR32.dll
+0x751b0000 - 0x75241000 	C:\Windows\syswow64\OLEAUT32.dll
+0x74e80000 - 0x74fdd000 	C:\Windows\syswow64\ole32.dll
+0x76fe0000 - 0x76ff2000 	C:\Windows\syswow64\DEVOBJ.dll
+0x71d30000 - 0x71d50000 	C:\Program Files (x86)\NVIDIA Corporation\CoProcManager\nvdxgiwrap.dll
+0x749a0000 - 0x74a5f000 	D:\Java\jdk1.8.0_20\jre\bin\msvcr100.dll
+0x6cb60000 - 0x6cf02000 	D:\Java\jdk1.8.0_20\jre\bin\client\jvm.dll
+0x6d500000 - 0x6d507000 	C:\Windows\system32\WSOCK32.dll
+0x75be0000 - 0x75c15000 	C:\Windows\syswow64\WS2_32.dll
+0x74c60000 - 0x74c66000 	C:\Windows\syswow64\NSI.dll
+0x76350000 - 0x76382000 	C:\Windows\syswow64\WINMM.dll
+0x750b0000 - 0x750b5000 	C:\Windows\syswow64\PSAPI.DLL
+0x74990000 - 0x7499c000 	D:\Java\jdk1.8.0_20\jre\bin\verify.dll
+0x74960000 - 0x74981000 	D:\Java\jdk1.8.0_20\jre\bin\java.dll
+0x52750000 - 0x52763000 	D:\Java\jdk1.8.0_20\jre\bin\zip.dll
+0x707c0000 - 0x708ab000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Xbootclasspath:D:\Program Files\Java\jre1.8.0_121\lib\resources.jar;D:\Program Files\Java\jre1.8.0_121\lib\rt.jar;D:\Program Files\Java\jre1.8.0_121\lib\jsse.jar;D:\Program Files\Java\jre1.8.0_121\lib\jce.jar;D:\Program Files\Java\jre1.8.0_121\lib\charsets.jar;D:\Program Files\Java\jre1.8.0_121\lib\jfr.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\access-bridge-64.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\cldrdata.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\dnsns.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\jaccess.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\jfxrt.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\localedata.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\nashorn.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\sunec.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\sunjce_provider.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\sunmscapi.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\sunpkcs11.jar;D:\Program Files\Java\jre1.8.0_121\lib\ext\zipfs.jar 
+java_command: com.redis.lua.TestSeckillService
+java_class_path (initial): D:\Documents\DistributedLock\target\classes;D:\repository_new\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;D:\repository_new\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;D:\repository_new\org\apache\zookeeper\zookeeper\3.4.9\zookeeper-3.4.9.jar;D:\repository_new\org\slf4j\slf4j-api\1.6.1\slf4j-api-1.6.1.jar;D:\repository_new\org\slf4j\slf4j-log4j12\1.6.1\slf4j-log4j12-1.6.1.jar;D:\repository_new\log4j\log4j\1.2.16\log4j-1.2.16.jar;D:\repository_new\jline\jline\0.9.94\jline-0.9.94.jar;D:\repository_new\io\netty\netty\3.10.5.Final\netty-3.10.5.Final.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\Program Files\Java\jdk1.8.0_121
+JRE_HOME=D:\Java\1.7\jre7\lib
+PATH=D:/Program Files/Java/jre1.8.0_121/bin/server;D:/Program Files/Java/jre1.8.0_121/bin;D:/Program Files/Java/jre1.8.0_121/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Oracle\VirtualBox\;D:\Program Files\Java\jdk1.8.0_121\bin;D:\devoloptools\gradle-3.5\bin;D:\devoloptools\apache-maven-3.3.9\bin;D:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\nodejs\;D:\Program Files\TortoiseSVN\bin;d:\Program Files (x86)\WinSCP\;D:\Program Files\TortoiseGit\bin;d:\Program Files\Git\cmd;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;d:\Program Files\OpenVPN\bin;D:\devoloptools\python-3.5\Scripts\;D:\devoloptools\python-3.5\;C:\Users\Administrator\AppData\Roaming\npm;D:\software\Docker Toolbox;D:\devoloptools\eclipse;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 12259768k(7222628k free), swap 24517676k(18870720k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.20-b23) for windows-x86 JRE (1.8.0_20-b26), built on Jul 30 2014 18:14:41 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Mar 01 18:20:47 2018
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

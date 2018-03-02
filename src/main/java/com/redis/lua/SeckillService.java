@@ -1,15 +1,18 @@
 package com.redis.lua;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 public class SeckillService {
+	public static final String SUCCESS_FLAG = "1";
 	private static JedisPool pool = null;
     static String script;
     static String key="goodsId";
@@ -27,7 +30,7 @@ public class SeckillService {
 		pool = new JedisPool(config, "127.0.0.1", 6379, 3000);
 		Jedis resource = pool.getResource();
 		String prefix="goodsId:";
-		String [] keys=new String[]{prefix+"1",prefix+"2",prefix+"3",prefix+"4",prefix+"5",prefix+"6"};
+		String [] keys=new String[]{prefix+SUCCESS_FLAG,prefix+"2",prefix+"3",prefix+"4",prefix+"5",prefix+"6"};
 		for(String key:keys){
 			Map<String, String> param=new HashMap<>();
 			param.put("Total", "100");
@@ -90,20 +93,30 @@ public class SeckillService {
     	jedis.close();
     }
     
-    public void seckill(List<String> keys,List<String> count) {
+    public boolean seckill(List<String> keys,List<String> count) {
     	Jedis jedis = getJedis();
     	String booked = jedis.eval(script, keys, count).toString();
-    	if(booked.equals("1")){
-    		System.out.println("预占库存成功");
-    	}else{
-    		System.out.println("库存不足");
-    	}
     	jedis.close();
+    	if(booked.equals(SUCCESS_FLAG)){
+    		System.out.println("预占成功");
+    		return true;
+    	}else{
+    		System.out.println("预占失败");
+    		return false;
+    	}
     }
     
-    public static void main(String[] args) {
-    	SeckillService seckillService=new SeckillService();
-    	seckillService.seckill("",50);
+    public boolean seckill(Map<String,String> goodsMap) {
+		boolean flag=false;
+		Set<String> keys = goodsMap.keySet();
+		List<String> goodsIds=new ArrayList<>(keys.size());
+		List<String> purchaseCounts=new ArrayList<>(keys.size());
+		for(String key :keys){
+			goodsIds.add(key);
+			purchaseCounts.add(goodsMap.get(key));
+		}
+		flag=seckill(goodsIds, purchaseCounts);
+    	return flag;
 	}
     
 }
